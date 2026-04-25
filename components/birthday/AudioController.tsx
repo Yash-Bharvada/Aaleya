@@ -11,7 +11,7 @@ interface AudioControllerProps {
 export function AudioController({ isPlaying, onToggle }: AudioControllerProps) {
   return (
     <motion.button
-      className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-birthday-black/80 border border-birthday-gold/30 backdrop-blur-sm flex items-center justify-center group hover:border-birthday-gold/60 transition-colors"
+      className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-4 md:right-6 z-50 w-14 h-14 md:w-12 md:h-12 rounded-full bg-birthday-black/80 border border-birthday-gold/30 backdrop-blur-sm flex items-center justify-center group hover:border-birthday-gold/60 transition-colors"
       onClick={onToggle}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
