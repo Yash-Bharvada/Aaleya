@@ -41,7 +41,7 @@ export function LetterSection({ recipientName = "Ayesha", senderName = "Your Nam
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center py-20 px-6 relative"
+      className="min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 relative"
       style={{
         background: 'radial-gradient(ellipse at center, rgba(5,5,5,0.8) 0%, #050505 70%)',
       }}
@@ -65,8 +65,8 @@ export function LetterSection({ recipientName = "Ayesha", senderName = "Your Nam
             A Letter to You
           </h2>
 
-          <div className="relative bg-birthday-black/30 border border-birthday-gold/20 rounded-sm p-8 md:p-12">
-            <p className="font-serif text-birthday-ivory text-lg md:text-xl leading-relaxed text-left whitespace-pre-wrap">
+          <div className="relative bg-birthday-black/30 border border-birthday-gold/20 rounded-sm p-5 sm:p-8 md:p-12">
+            <p className="font-serif text-birthday-ivory text-base sm:text-lg md:text-xl leading-relaxed text-left whitespace-pre-wrap">
               {displayedText}
               <motion.span
                 className="inline-block w-[2px] h-5 bg-birthday-gold ml-1"
