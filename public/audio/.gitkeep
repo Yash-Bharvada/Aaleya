@@ -1,0 +1,5 @@
+# Audio Files
+
+Place your birthday song here and name it: birthday-song.mp3
+
+Or update the CONFIG.audioSrc in app/page.tsx to point to your file.
