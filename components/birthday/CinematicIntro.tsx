@@ -48,35 +48,50 @@ export function CinematicIntro({ onComplete, name = 'A Y E S H A' }: CinematicIn
       {/* Grain overlay */}
       <div className="grain-overlay" />
 
-      {/* Gold line animation */}
-      <AnimatePresence>
-        {stage >= 1 && (
-          <motion.div
-            className="absolute top-1/2 left-1/2 h-[1px] bg-gradient-to-r from-transparent via-birthday-gold to-transparent"
-            initial={{ width: 0, x: '-50%', y: '-50%' }}
-            animate={{ width: '60%' }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          />
-        )}
-      </AnimatePresence>
+      {/* Main content centered */}
+      <div className="relative z-10 flex flex-col items-center justify-center">
+        {/* Gold decorative line above name */}
+        <AnimatePresence>
+          {stage >= 1 && (
+            <motion.div
+              className="h-[1px] bg-gradient-to-r from-transparent via-birthday-gold to-transparent mb-6"
+              initial={{ width: 0 }}
+              animate={{ width: '160px' }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            />
+          )}
+        </AnimatePresence>
 
-      {/* Name animation */}
-      <div className="relative z-10 flex flex-wrap items-center justify-center gap-0.5 md:gap-2 mt-8 px-4 max-w-xs sm:max-w-md md:max-w-2xl mx-auto">
-        {nameChars.map((char, index) => (
-          <motion.span
-            key={index}
-            className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-birthday-ivory tracking-[0.2em] md:tracking-[0.3em]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={stage >= 1 ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              duration: 0.6,
-              delay: 1.4 + index * 0.08,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-            {char}
-          </motion.span>
-        ))}
+        {/* Name animation */}
+        <div className="flex flex-wrap items-center justify-center gap-0.5 md:gap-2 px-4 max-w-xs sm:max-w-md md:max-w-2xl mx-auto">
+          {nameChars.map((char, index) => (
+            <motion.span
+              key={index}
+              className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-birthday-ivory tracking-[0.2em] md:tracking-[0.3em]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={stage >= 1 ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: 1.4 + index * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </div>
+
+        {/* Gold decorative line below name */}
+        <AnimatePresence>
+          {stage >= 1 && (
+            <motion.div
+              className="h-[1px] bg-gradient-to-r from-transparent via-birthday-gold to-transparent mt-6"
+              initial={{ width: 0 }}
+              animate={{ width: '160px' }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            />
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Subtitle */}
